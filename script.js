@@ -16,3 +16,5 @@ console.warn("k");
 // const e=1;
 // const f;
 // e=f;
+
+console.log(9+3);
