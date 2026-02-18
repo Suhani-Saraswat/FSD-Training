@@ -36,6 +36,16 @@
                 if(!emailPattern.test(email)){
                     throw new error("invalid email format");
                 }
+                if (marks<0 || marks>100) {
+                    throw new error("invalid marks format");
+                }
+                if(emailSet.has(email)){
+                    throw new error("email already exists");
+                }
+                emailSet.add(email);
+
+                //object
+                
             }
         }
     </script>
