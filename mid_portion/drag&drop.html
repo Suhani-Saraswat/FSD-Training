@@ -14,13 +14,13 @@
 
     <script>
         box.addEventListener("dragstart", function(e) {
-            e.datatransfer.setData("text","box");
+            e.dataTransfer.setData("text","box");
         });
         drop.addEventListener("dragover",function(e) {
             e.preventDefault();
         });
         drop.addEventListener("drop", function(e) {
-            let data = e.datatransfer.getData("text");
+            let data = e.dataTransfer.getData("text");
             drop.appendChild(document.getElementById(data));
         });
     </script>
