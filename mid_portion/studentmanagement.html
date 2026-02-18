@@ -6,6 +6,38 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h2> Smart Students Management </h2>
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="email" placeholder="Enter Email">
+    <input type="text" id="marks" placeholder="Enter Marks">
+    <button onclick="addStudent()">Add Student</button>
+    <h2> Students List </h2>
+    <ul id="studentList"></ul>
+
+    <script>
+        //array
+        let students = [];
+        //set
+        let emailSet = new Set();
+        //map
+        let gradeMap = new Map();
+
+        function addStudent() {
+            try{
+                //debugging (k liye)
+                debugger;
+                //local scope
+                const name=document.getElementById("name").value;
+                const email=document.getElementById("email").value;
+                const marks=document.getElementById("marks").value;
+                //REGEX Validation
+                const emailPattern = /^[^\s@]+@[^\s@]+\,[^\s@]+$/;
+                if(!emailPattern.test(email)){
+                    throw new error("invalid email format");
+                }
+            }
+        }
+    </script>
 </body>
 </html>
