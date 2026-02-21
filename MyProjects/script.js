@@ -15,3 +15,24 @@ let winningPattern = [
   [0, 4, 8],
   [2, 4, 6],
 ];
+
+//Player 'X' plays first
+let xTurn = true;
+let count = 0;
+
+//Disable All Buttons
+const disableButtons = () => {
+  btnRef.forEach((element) => (element.disabled = true));
+  //enable popup
+  popupRef.classList.remove("hide");
+};
+
+//Enable all buttons (For New Game and Restart)
+const enableButtons = () => {
+  btnRef.forEach((element) => {
+    element.innerText = "";
+    element.disabled = false;
+  });
+  //disable popup
+  popupRef.classList.add("hide");
+};
