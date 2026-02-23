@@ -7,13 +7,13 @@
 
 <h2>Smart Student Manager</h2>
 
-<input type="text" id="name" placeholder="Enter Name">
-<input type="text" id="email" placeholder="Enter Email">
-<input type="number" id="marks" placeholder="Enter Marks">
-<button onclick="addStudent()">Add Student</button>
+<input type="text" id="name" placeholder="Enter Name"> <!--input box for name-->
+<input type="text" id="email" placeholder="Enter Email"> <!-- input box for eamil-->
+<input type="number" id="marks" placeholder="Enter Marks"> <!--input box for marks-->
+<button onclick="addStudent()">Add Student</button> <!--button to add student details-->
 
-<h3>Student List:</h3>
-<ul id="studentList"></ul>
+<h3>Student List:</h3> 
+<ul id="studentList"></ul> <!--Student List-->
 
 <script>
 
@@ -22,7 +22,6 @@ let students = [];          // Array
 let emailSet = new Set();   // Set (unique emails)
 let gradeMap = new Map();   // Map (email → grade)
 function addStudent() {
-
     try {
 
         // Debugging
@@ -33,7 +32,7 @@ function addStudent() {
         const email = document.getElementById("email").value;
         const marks = Number(document.getElementById("marks").value);
 
-        // 
+        // Email Pattern
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailPattern.test(email)) {
@@ -68,6 +67,7 @@ function addStudent() {
         alert(error.message);
     }
 }
+
 function calculateGrade(marks) {
     if (marks >= 90) return "A";
     if (marks >= 75) return "B";
@@ -75,6 +75,7 @@ function calculateGrade(marks) {
     if (marks >= 40) return "D";
     return "Fail";
 }
+
 function displayStudents() {
     const list = document.getElementById("studentList");
     list.innerHTML = "";
@@ -94,6 +95,7 @@ function displayStudents() {
     });
     calculateAverage();
 }
+
 function calculateAverage() {
     if (students.length === 0) return;
     let total = 0;
